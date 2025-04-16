@@ -1,0 +1,478 @@
+/* Основные стили для body */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #f9f9f9, #ffffff); /* Мягкий градиент */
+    color: black;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Сетка для фона с геометрическим узором */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        radial-gradient(circle at 10% 10%, rgba(255, 94, 0, 0.05) 20%, transparent 20%),
+        radial-gradient(circle at 90% 90%, rgba(255, 94, 0, 0.05) 20%, transparent 20%),
+        radial-gradient(circle at 50% 50%, rgba(255, 94, 0, 0.05) 20%, transparent 20%);
+    background-size: 100px 100px; /* Размер узора */
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.5; /* Полупрозрачный узор */
+}
+
+/* Заголовок */
+h1 {
+    color: black;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+/* Контейнер для фильтров */
+#filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+    background-color: rgba(255, 255, 255, 0.9); /* Полупрозрачный белый фон */
+    padding: 15px;
+    border-radius: 12px; /* Скруглённые углы */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Тень для глубины */
+    backdrop-filter: blur(5px); /* Лёгкое размытие для эффекта стекла */
+}
+
+/* Стили для label */
+#filters label {
+    font-weight: bold;
+    color: black;
+    margin-right: 5px;
+}
+
+/* Стили для выпадающего списка, полей ввода и кнопок */
+#filters select,
+#filters input[type="date"],
+#filters input[type="number"],
+#filters button {
+    padding: 8px 12px;
+    border: 2px solid #ff5e00; /* Насыщенный оранжевый */
+    border-radius: 6px; /* Скруглённые углы */
+    background-color: white; /* Белый фон */
+    color: black; /* Чёрный текст */
+    font-size: 14px;
+    cursor: pointer;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Стили для выпадающего списка */
+#filters select {
+    background-color: white;
+    color: black;
+}
+
+/* Стили для кнопки */
+#filters button {
+    background-color: #ff5e00; /* Насыщенный оранжевый */
+    border: none;
+    color: white; /* Белый текст */
+    font-weight: bold;
+}
+
+/* Эффект при наведении на кнопку */
+#filters button:hover {
+    background-color: #ff4500; /* Ещё более насыщенный оранжевый */
+}
+
+/* Эффект при наведении на поля ввода */
+#filters select:hover,
+#filters input[type="date"]:hover,
+#filters input[type="number"]:hover {
+    border-color: #ff4500; /* Ещё более насыщенный оранжевый */
+}
+
+/* Контейнер для событий */
+#events {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Стили для карточки события */
+.event {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 12px; /* Более скруглённые углы */
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Тень для глубины */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column; /* Элементы внутри карточки выстраиваются вертикально */
+    align-items: center; /* Центрирование по горизонтали */
+    text-align: center; /* Центрирование текста */
+}
+
+/* Эффект при наведении на карточку */
+.event:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Изображение в карточке */
+.event img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+/* Заголовок события */
+.event h2 {
+    font-size: 20px;
+    margin: 10px 0;
+    color: black;
+    font-weight: bold;
+}
+
+/* Текст в карточке */
+.event p {
+    font-size: 14px;
+    color: black;
+    margin: 5px 0;
+    line-height: 1.5;
+}
+
+/* Акцентный текст (например, цена и возрастной рейтинг) */
+.event p strong {
+    color: #ff5e00; /* Насыщенный оранжевый */
+}
+
+/* Ссылка в карточке */
+.event a {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 15px;
+    background-color: #ff5e00; /* Насыщенный оранжевый */
+    color: white; /* Белый текст */
+    text-decoration: none;
+    border-radius: 6px; /* Скруглённые углы */
+    font-size: 14px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    width: fit-content; /* Ширина кнопки по содержимому */
+}
+
+/* Эффект при наведении на ссылку */
+.event a:hover {
+    background-color: #ff4500; /* Ещё более насыщенный оранжевый */
+}
+
+/* Декоративный элемент для карточки */
+.event::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: #ff5e00; /* Насыщенный оранжевый */
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+/* Эффект при наведении на декоративный элемент */
+.event:hover::before {
+    opacity: 1;
+}
+
+/* Стили для страницы события (из event.css) */
+.event-container {
+    display: flex;
+    gap: 20px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px); /* Лёгкое размытие для эффекта стекла */
+}
+
+.event-info {
+    flex: 1;
+}
+
+.event-image-container {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#event-image {
+    max-width: 100%;
+    max-height: 400px;
+    border-radius: 8px;
+    object-fit: cover;
+    border: 4px solid #ff5e00; /* Оранжевая обводка */
+}
+
+.event-details p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.ticket-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ff5e00; /* Насыщенный оранжевый */
+    color: white; /* Белый текст */
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.ticket-button:hover {
+    background-color: #ff4500; /* Ещё более насыщенный оранжевый */
+}
+
+.event-full-description {
+    margin-top: 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: rgba(255, 255, 255, 0.9); /* Полупрозрачный белый фон */
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.event-full-description h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.event-full-description p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+}
+
+.event-gallery {
+    margin-top: 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: rgba(255, 255, 255, 0.9); /* Полупрозрачный белый фон */
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.event-gallery h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.gallery-scroll-container {
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 10px;
+}
+
+.gallery-images {
+    display: inline-flex;
+    gap: 10px;
+}
+
+.gallery-images img {
+    max-width: 200px;
+    max-height: 150px;
+    border-radius: 8px;
+    object-fit: cover;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.gallery-images img:hover {
+    transform: scale(1.05);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #ff5e00;
+}
+
+.event-additional-info {
+    margin-top: 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: rgba(255, 255, 255, 0.9); /* Полупрозрачный белый фон */
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.event-additional-info h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.event-additional-info p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.event-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: #ff5e00; /* Насыщенный оранжевый */
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.event-container:hover::before {
+    opacity: 1;
+}
+
+/* Стили для кнопки "Назад" */
+.back-button {
+    display: inline-block;
+    margin: 20px;
+    padding: 10px 20px;
+    background-color: #ff5e00;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #ff4500;
+}
+
+/* Центрирование контейнера  place*/
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Изменено на flex-start, чтобы поднять iframe выше */
+    padding: 20px;
+    text-align: center;
+    margin-top: 20px; /* Добавлено для поднятия контейнера */
+}
+
+/* Стили для контейнера iframe */
+.iframe-container {
+    width: 90%; /* Увеличено для лучшего отображения */
+    max-width: 1200px;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Стили для иконки сердца */
+.fa-heart {
+    cursor: pointer;
+    color: #ccc; /* Серый цвет для неактивного сердца */
+    transition: color 0.3s ease;
+}
+
+.fa-heart.favorite {
+    color: #ff5e00; /* Оранжевый цвет для активного сердца */
+}
+
+/* Стили для заголовка события с иконкой сердца */
+.event-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Стили для кнопки "Избранное" */
+#filters button i {
+    margin-right: 5px;
+}
+
+/* Стили для кнопки "Избранное" */
+#filters button {
+    background-color: #ff5e00;
+    border: none;
+    color: white;
+    font-weight: bold;
+    margin-left: 10px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+#filters button:hover {
+    background-color: #ff4500;
+}
+
+/* Стили для контейнера с подсказкой */
+#favourites-hint {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* Стили для текста подсказки */
+#favourites-hint p {
+    color: #ff5e00;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.event-source {
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 5px;
+    font-style: italic;
+}

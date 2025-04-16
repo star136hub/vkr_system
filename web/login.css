@@ -1,0 +1,135 @@
+/* Стили для body */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #f9f9f9, #ffffff);
+    color: black;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden; /* Убираем скролл, если он не нужен */
+}
+
+/* Сетка для фона с геометрическим узором */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        radial-gradient(circle at 10% 10%, rgba(255, 94, 0, 0.05) 20%, transparent 20%),
+        radial-gradient(circle at 90% 90%, rgba(255, 94, 0, 0.05) 20%, transparent 20%),
+        radial-gradient(circle at 50% 50%, rgba(255, 94, 0, 0.05) 20%, transparent 20%);
+    background-size: 100px 100px;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+/* Стили для заголовка "Авторизация и регистрация" */
+.auth-container h1 {
+    color: black;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    background-color: transparent; /* Убираем белый фон */
+    padding: 0; /* Убираем лишние отступы */
+}
+
+/* Стили для контейнера авторизации и регистрации */
+.auth-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Занимает всю высоту экрана */
+    padding: 20px;
+    max-width: 400px; /* Ограничение ширины контейнера */
+    margin: 0 auto; /* Центрирование по горизонтали */
+}
+
+/* Стили для форм авторизации и регистрации */
+.auth-form {
+    width: 100%;
+    background-color: white; /* Белый фон только для формы */
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    box-sizing: border-box; /* Учитываем padding в общей ширине */
+}
+
+.auth-form h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: black;
+    font-weight: bold;
+}
+
+.auth-form label {
+    display: block;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+/* Стили для полей ввода */
+.auth-form input {
+    width: calc(100% - 24px); /* Учитываем padding и border */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 2px solid #ff5e00;
+    border-radius: 6px;
+    font-size: 14px;
+    color: black;
+    background-color: white;
+    transition: border-color 0.3s ease;
+    box-sizing: border-box; /* Учитываем padding и border в ширине */
+}
+
+.auth-form input:focus {
+    border-color: #ff4500;
+    outline: none;
+}
+
+/* Стили для кнопок */
+.auth-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #ff5e00;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-sizing: border-box; /* Учитываем padding в ширине */
+}
+
+.auth-form button:hover {
+    background-color: #ff4500;
+}
+
+.auth-form p {
+    margin-top: 15px;
+    font-size: 14px;
+    color: black;
+}
+
+.auth-form a {
+    color: #ff5e00;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.auth-form a:hover {
+    color: #ff4500;
+}

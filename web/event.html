@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мероприятие</title>
+    <link rel="stylesheet" href="styles.css">
+    <script type="text/javascript" src="/eel.js"></script>
+    <script src="event.js"></script>
+</head>
+<body>
+    <a href="index.html" class="back-button">Назад</a>
+
+    <!-- Первый блок: Основная информация -->
+    <div class="event-container">
+        <!-- Левая часть: информация -->
+        <div class="event-info">
+            <h1 id="event-title">Мероприятие</h1>
+            <div class="event-details">
+                <p><strong>Дата:</strong> <span id="event-date"></span></p>
+                <p><strong>Место:</strong> <span id="event-place"></span></p>
+                <p><strong>Стоимость:</strong> <span id="event-price"></span></p>
+                <p><strong>Краткое описание:</strong> <span id="event-short-description"></span></p>
+                <a id="event-ticket-link" href="#" class="ticket-button">Выбрать места</a>
+            </div>
+        </div>
+
+        <!-- Правая часть: изображение мероприятия -->
+        <div class="event-image-container">
+            <img id="event-image" src="" alt="Изображение мероприятия">
+        </div>
+    </div>
+
+    <!-- Второй блок: Полное описание -->
+    <div id="full-description-container" class="event-full-description">
+        <h2>Полное описание</h2>
+        <p id="event-full-description"></p>
+    </div>
+
+    <!-- Третий блок: Галерея изображений -->
+    <div id="gallery-container" class="event-gallery">
+        <h2>Галерея</h2>
+        <div class="gallery-scroll-container">
+            <div id="gallery-images" class="gallery-images"></div>
+        </div>
+    </div>
+
+    <!-- Четвертый блок: Дополнительная информация -->
+    <div id="additional-info-container" class="event-additional-info">
+        <h2>Дополнительная информация</h2>
+        <div id="additional-info-content"></div>
+    </div>
+
+    <!-- Модальное окно для увеличенного изображения -->
+    <div id="modal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modal-image">
+    </div>
+</body>
+</html>

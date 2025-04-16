@@ -1,0 +1,43 @@
+<!-- login.html -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Авторизация и регистрация</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="auth-container">
+        <h1>Авторизация и регистрация</h1>
+
+        <!-- Форма авторизации -->
+        <div id="loginForm" class="auth-form">
+            <h2>Вход</h2>
+            <label for="loginUsername">Логин:</label>
+            <input type="text" id="loginUsername" required>
+            <label for="loginPassword">Пароль:</label>
+            <input type="password" id="loginPassword" required autocomplete="new-password">
+            <button onclick="login()">Войти</button>
+            <p>Нет аккаунта? <a href="#" onclick="showRegisterForm()">Зарегистрируйтесь</a></p>
+        </div>
+
+        <!-- Форма регистрации -->
+        <div id="registerForm" class="auth-form" style="display: none;">
+            <h2>Регистрация</h2>
+            <label for="registerUsername">Логин:</label>
+            <input type="text" id="registerUsername" required>
+            <label for="registerPassword">Пароль:</label>
+            <input type="password" id="registerPassword" required autocomplete="new-password">
+            <button onclick="register()">Зарегистрироваться</button>
+            <p>Уже есть аккаунт? <a href="#" onclick="showLoginForm()">Войдите</a></p>
+        </div>
+    </div>
+
+    <!-- Подключаем eel.js -->
+    <script type="text/javascript" src="/eel.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <script src="login.js"></script>
+</body>
+</html>

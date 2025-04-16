@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Театральные события</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Подключаем Font Awesome для иконок -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <h1>Театральные события</h1>
+    <div id="filters">
+        <label for="theater">Театр:</label>
+        <select id="theater">
+            <option value="all">Все</option>
+        </select>
+
+        <label for="price">Цена:</label>
+        <input type="number" id="price-min" placeholder="Мин">
+        <input type="number" id="price-max" placeholder="Макс">
+
+        <label for="sort">Сортировать по:</label>
+        <select id="sort">
+            <option value="none">По умолчанию</option>
+            <option value="date_asc">Дате (по возрастанию)</option>
+            <option value="date_desc">Дате (по убыванию)</option>
+            <option value="price_asc">Цене (по возрастанию)</option>
+            <option value="price_desc">Цене (по убыванию)</option>
+            <option value="age_asc">Возрасту (по возрастанию)</option>
+            <option value="age_desc">Возрасту (по убыванию)</option>
+        </select>
+
+        <button onclick="applyFilters()">Применить фильтры</button>
+        <!-- Кнопка для перехода к избранным событиям -->
+        <button onclick="toggleFavoritesView()">
+            <i class="fas fa-heart"></i> Избранное
+        </button>
+    </div>
+
+    <!-- Контейнер для подсказки -->
+    <div id="favourites-hint"></div>
+
+    <!-- Контейнер для событий -->
+    <div id="events"></div>
+
+    <script type="text/javascript" src="/eel.js"></script>
+    <script src="index.js"></script>
+
+    <script>
+        function logout() {
+            localStorage.removeItem('currentUser');
+            window.location.href = 'login.html';
+        }
+    </script>
+    
+</body>
+</html>
